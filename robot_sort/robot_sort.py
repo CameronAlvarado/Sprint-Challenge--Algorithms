@@ -93,38 +93,94 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
-        """
-        Sort the robot's list.
-        """
-        # Fill this out
 
+# attempt 3
         for x in self._list:
-            self.compare_item()
-            if 0:
-                self.can_move_right()
-                if True:
-                    self.move_right()
-                    self.compare_item()
-                    if 0:
+            while self._light is "OFF":
+                self.compare_item()
+                if None:
+                    self.swap_item()
+                    self.sort()
+                if -1:
+                    self.swap_item()
+                    self.can_move_right()
+                    if False:
+                        self.set_light_on() # off when moving right, on when moving left.
                         self.sort()
+                    self.move_right()
+                    self.sort()
+                elif 0:
+                    self.can_move_right()
+                    if False:
+                        self.set_light_on() # off when moving right, on when moving left.
+                        self.sort()
+                    self.move_right()
+                    self.sort()
                 else:
-                    self.move_left()
-                    self.compare_item()
-                    if 0:
-                        self.move_left()
-                        self.compare_item()
-                        if 1:
-                            self.swap_item()
-                            self.move_left()
-                            self.sort()
-
-            elif -1:
-                self.can_move_right()
-                if True:
-                    self.move_right()
-                    self.compare_item()
-                    if 0:
+                    self.swap_item()
+                    self.can_move_right()
+                    if False:
+                        self.set_light_on() # off when moving right, on when moving left.
                         self.sort()
+                    self.sort()
+            else:
+                self.move_left()
+                self.compare_item()
+                if -1:
+                    self.swap_item()
+                    self.can_move_left()
+                    if False:
+                        self.set_light_off() # off when moving right, on when moving left.
+                        self.sort()
+                    self.move_left()
+                elif 0:
+                    self.can_move_left()
+                    if False:
+                        self.set_light_off() # off when moving right, on when moving left.
+                        self.sort()
+                    self.move_left()
+                    self.sort()
+                else:
+                    self.swap_item()
+                    self.can_move_left()
+                    if False:
+                        self.set_light_off() # off when moving right, on when moving left.
+                        self.sort()
+                    self.sort()
+        return x
+
+# -------------------------------------------
+# attempt 2
+
+        # for x in self._list:
+        #     self.compare_item()
+        #     if 0:
+        #         self.can_move_right()
+        #         if True:
+        #             self.move_right()
+        #             self.compare_item()
+        #             if 0:
+        #                 self.sort()
+        #         else:
+        #             self.move_left()
+        #             self.compare_item()
+        #             if 0:
+        #                 self.move_left()
+        #                 self.compare_item()
+        #                 if 1:
+        #                     self.swap_item()
+        #                     self.move_left()
+        #                     self.sort()
+
+        #     elif -1:
+        #         self.can_move_right()
+        #         if True:
+        #             self.move_right()
+        #             self.compare_item()
+        #             if 0:
+        #                 self.sort()
+# -------------------------------------------
+# attempt 1
 
         # for x in self._list:
         #     if self.can_move_right():
