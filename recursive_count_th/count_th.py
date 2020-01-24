@@ -3,6 +3,7 @@ Your function should take in a single parameter (a string `word`)
 Your function should return a count of how many occurences of ***"th"*** occur within `word`. Case matters.
 Your function must utilize recursion. It cannot contain any loops.
 '''
+
 def count_th(word):
 	L1 = len(word)
 	L2 = len("th")
@@ -16,4 +17,5 @@ def count_th(word):
 	return count_th(word[L2 - 1:])
 
 
-count_th("thanosthinks")
+print(count_th("thanosthinks"))
+# should return 2

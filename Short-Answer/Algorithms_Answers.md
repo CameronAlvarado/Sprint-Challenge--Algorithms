@@ -2,10 +2,10 @@
 
 ## Exercise I
 
-a) O(n)
+a) O(n^5)
 
 
-b) O(n log n)
+b) O(n)
 
 
 c) O(n)
@@ -18,9 +18,11 @@ c) O(n)
 # Define stories of building: n
 
 # Floors that will break egg: x
+
 # x = n - f
 
 # Floors that will save egg: y
+
 # y = n - x
 
 # Runtime Complexity
