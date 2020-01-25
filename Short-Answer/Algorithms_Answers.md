@@ -15,7 +15,7 @@ c) O(n)
 
 # Psudo code
 
-# Define stories of building: n
+# Total number of floors: n
 
 # Find floors that will break egg: x
 
