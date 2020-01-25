@@ -93,119 +93,21 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
-
-# attempt 3
-        for x in self._list:
-            while self._light is "OFF":
-                self.compare_item()
-                if None:
+        self.swap_item()
+        while True: # starts loop for sorting
+            if not self.can_move_right():
+                self.swap_item() # Swaps with none, stops the loop
+                break
+            while self.can_move_right():
+                self.move_right() 
+                if self.compare_item() == 1: 
                     self.swap_item()
-                    self.sort()
-                if -1:
-                    self.swap_item()
-                    self.can_move_right()
-                    if False:
-                        self.set_light_on() # off when moving right, on when moving left.
-                        self.sort()
-                    self.move_right()
-                    self.sort()
-                elif 0:
-                    self.can_move_right()
-                    if False:
-                        self.set_light_on() # off when moving right, on when moving left.
-                        self.sort()
-                    self.move_right()
-                    self.sort()
-                else:
-                    self.swap_item()
-                    self.can_move_right()
-                    if False:
-                        self.set_light_on() # off when moving right, on when moving left.
-                        self.sort()
-                    self.sort()
-            else:
+            while self.can_move_left() and self.compare_item() is not None: 
                 self.move_left()
-                self.compare_item()
-                if -1:
-                    self.swap_item()
-                    self.can_move_left()
-                    if False:
-                        self.set_light_off() # off when moving right, on when moving left.
-                        self.sort()
-                    self.move_left()
-                elif 0:
-                    self.can_move_left()
-                    if False:
-                        self.set_light_off() # off when moving right, on when moving left.
-                        self.sort()
-                    self.move_left()
-                    self.sort()
-                else:
-                    self.swap_item()
-                    self.can_move_left()
-                    if False:
-                        self.set_light_off() # off when moving right, on when moving left.
-                        self.sort()
-                    self.sort()
-        return x
-
-# -------------------------------------------
-# attempt 2
-
-        # for x in self._list:
-        #     self.compare_item()
-        #     if 0:
-        #         self.can_move_right()
-        #         if True:
-        #             self.move_right()
-        #             self.compare_item()
-        #             if 0:
-        #                 self.sort()
-        #         else:
-        #             self.move_left()
-        #             self.compare_item()
-        #             if 0:
-        #                 self.move_left()
-        #                 self.compare_item()
-        #                 if 1:
-        #                     self.swap_item()
-        #                     self.move_left()
-        #                     self.sort()
-
-        #     elif -1:
-        #         self.can_move_right()
-        #         if True:
-        #             self.move_right()
-        #             self.compare_item()
-        #             if 0:
-        #                 self.sort()
-# -------------------------------------------
-# attempt 1
-
-        # for x in self._list:
-        #     if self.can_move_right():
-        #         self.move_right()
-        #         y = self.compare_item()
-        #         if y is 0:
-        #             self.move_right()
-        #             return y
-        #         elif y is 1:
-        #             self.move_right()
-        #         else:
-        #             self.swap_item()
-        #             self.move_right()
-        #     else:
-        #         self.move_left()
-        #         z = self.compare_item()
-        #         if z is 0:
-        #             self.move_left()
-        #             return z
-        #         elif z is 1:
-        #             self.move_left()
-        #         else:
-        #             self.swap_item()
-        #             self.move_left()
-        #     return x
+                # Goes back to start
+            self.swap_item() # drop smallest and swap with None
+            self.move_right() # moves right, everything to left is sorted
+            self.swap_item() # drops None
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
